@@ -115,6 +115,11 @@
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
+}
+
+.overlayInput {
+  pointer-events: auto;
 }
 
 .clickable {
@@ -167,6 +172,7 @@
 
 .canvasRoot {
   flex-grow: 1;
+  position: relative;
 }
 
 /* make slide button disappear on desktop */
@@ -205,16 +211,16 @@
 .banners:nth-child(1) {
   margin-top: 1em;
 }
-.banners:nth-child(3) {
+.banners:nth-child(4) {
   margin-bottom: 1em;
 }
-.banners:nth-child(1) {
+.banners:nth-child(2) {
   background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/simpleToUse.webp");
 }
-.banners:nth-child(2) {
+.banners:nth-child(3) {
   background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/kidProof.jpeg");
 }
-.banners:nth-child(3) {
+.banners:nth-child(4) {
   background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/builtForTheClassroom.webp");
 }
 
@@ -273,7 +279,7 @@
   .slideButtonRoot {
     color: white;
     gap: 0.5em;
-    padding: 1em 0 0 0.5em;
+    padding: 1em 0 1em 0em;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5333333333));
   }
   .slideButtonRoot svg {
@@ -283,6 +289,59 @@
   }
   .slideButtonRoot .svgRotate {
     transform: rotate(180deg);
+  }
+}
+#loadingRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 1s;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%, 100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
 /* fill screen */
@@ -298,7 +357,7 @@ html {
 
 /* temporary for dev */
 html {
-  background-color: grey;
+  background: linear-gradient(to right, #FDD160, #FAA643);
 }
 
 /*# sourceMappingURL=styleSheet.css.map */

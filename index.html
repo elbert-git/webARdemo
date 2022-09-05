@@ -11,7 +11,14 @@
 
   </head>
   <body class="flex">
-    <div id="canvasRoot" class="canvasRoot">canvas</div>
+    <div id="canvasRoot" class="canvasRoot">
+      <!-- loading overlay -->
+      <div id="loadingRoot" class="overlay fillHeight fillWidth flex flexAlignCenter flexJustifyCenter">
+        <div class="loader"></div>
+      </div>
+      <!-- dom overlay -->
+      <div id="domOverlay"></div>
+    </div>
     <div id="sideRoot fillHeight" class="sideRoot">
       <div id="sideRootSlider" class="sideRootDown fillHeight flex flexColumn flexAlignCenter">
         <!-- slide button -->
@@ -36,6 +43,7 @@
           <div class="horizontalLine"></div>
           <!-- banners -->
           <div class="flex flexColumn flexAlignCenter fillWidth">
+            <div style="font-size: 1em; margin-top: 1em;">Tap on a banner to learn more</div>
             <div id="Banner1" class="banners roboto clickable">Simple to Use</div>
             <div id="Banner2" class="banners roboto clickable">Kid-Proof</div>
             <div id="Banner3" class="banners roboto clickable">Built for the Classroom</div>

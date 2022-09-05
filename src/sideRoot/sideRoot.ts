@@ -17,17 +17,15 @@ export class SideRoot{
     this.isDown = true;
 
     // *button Event listener
-    console.log('add event listeners');
     //slider buttons
-    this.elSlideButton.addEventListener('pointerdown', ()=>{this.toggle();})
+    this.elSlideButton.addEventListener('pointerup', ()=>{this.toggle();})
     // banner buttons
     this.elBannerArrays.forEach((el, index) => {
-      el.addEventListener('pointerdown', ()=>{this.bannerClicked(index)})
+      el.addEventListener('pointerup', ()=>{this.bannerClicked(index)})
     });
   }
 
   toggle():void{
-    console.log('toggle');
     // toggle slide up and down
     this.elSlider.classList.toggle('sideRootDown');
 

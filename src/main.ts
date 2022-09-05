@@ -9,4 +9,4 @@ const sideRoot = new SideRoot()
 
 
 // this is to tell the ts compiler to shut up
-console.log(experience, sideRoot);
+if(false) {console.log(experience, sideRoot);}

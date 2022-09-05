@@ -44,7 +44,9 @@
 .fadeOut                   {opacity: 0;}
 
 /* layering over */
-.overlay                   {position: absolute;top: 0;left: 0;}
+.overlay                   {position: absolute;top: 0;left: 0;pointer-events: none;}
+// note overlay removes pointer events; use class below to retore
+.overlayInput              {pointer-events: auto;}
 
 .clickable{
   $changeScale: 0.05;
