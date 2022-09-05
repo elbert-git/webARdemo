@@ -8,10 +8,40 @@
 
     <!-- css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="defaultStyle.css">
+
   </head>
   <body class="flex">
     <div id="canvasRoot" class="canvasRoot">canvas</div>
-    <div id="sideRoot" class="sideRoot">sideRoot</div>
+    <div id="sideRoot" class="debugRedLine sideRoot">
+      <div class="sideRootContentRoot">
+        <!-- side bar content start -->
+        <button id="slideButton">Slide</button>
+        <!-- title -->
+        <div class="sideBarTitleSection flex flexAlignCenter flexJustifyCenter flexColumn">
+          <div>Introducing the</div>
+          <h1>Micro-Junior</h1>
+          <div>The microscope designed for the Classroom</div>
+        </div>
+
+        <div class="horizontalLine"></div>
+        <!-- banners -->
+        <div>
+          <div id="Banner1" class="banners">Feature 1</div>
+          <div id="Banner2" class="banners">Feature 2</div>
+          <div id="Banner3" class="banners">Feature 3</div>
+        </div>
+        <div class="horizontalLine"></div>
+        <!-- buy section -->
+        <div class="sideRootBuySection">
+          <div class="buyNowContainer"></div>
+          <h2>ALPHA-BRAVO</h2>
+          <img src="./asdf" alt="">
+          <button>Buy Now!</button>
+        </div>
+        <div></div>
+      </div>
+    </div>
   </body>
   <script type="module" src="/src/main.ts"></script>
 </html>
