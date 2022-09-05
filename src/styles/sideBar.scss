@@ -1,0 +1,191 @@
+// variables
+$blue: #4E9FFF;
+
+// ------------------------------------------------  title section
+/* handle side bar placement in desktops */
+.sideRoot{
+  height: 100vh;
+  max-width: 300px;
+  width: 100%;
+
+  pointer-events: none;
+}
+/* make sidebar content root 100% and white */
+.sideRootContentRoot{
+  height: 100%;
+  background-color: $blue;
+  color: white;
+
+  pointer-events: auto;
+  overflow-y: scroll;
+}
+.canvasRoot{
+  flex-grow: 1;
+}
+
+/* make slide button disappear on desktop */
+#slideButton{display: none;}
+
+/* styling the sidebar titles */
+.sideBarTitleSection{
+  text-align: center;
+  padding: 1em
+}
+
+// add gap below swoosh
+// and make max width width only 100%
+.sideRootContentRoot svg{
+  margin-bottom: 0.5em;
+  max-width: 100%;
+
+}
+
+
+
+
+// ------------------------------------------------  banner section
+// style the banners
+.banners{
+  // handle text
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  display: flex; align-items: center; justify-content: center;
+  user-select: none; /* Standard */
+
+  // handle sizing
+  width: 80%;
+  box-sizing: border-box;
+  aspect-ratio: 10/4;
+  padding:1em;
+
+
+  border-radius: 0.5em;
+
+  //handle spacing
+  margin: 0.5em 0;
+  //first and last spacing 
+  &:nth-child(1){
+    margin-top: 1em;
+  }
+  &:nth-child(3){
+    margin-bottom: 1em;
+  }
+
+  
+  // background fitting into image
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+  // handle image urls
+  // $overlayColour: #1e83ffa4;
+  $overlayColour: #0051ff70;
+  &:nth-child(1){
+    background-image:
+      linear-gradient(to bottom, $overlayColour, $overlayColour),
+      url('assets/bannerImages/simpleToUse.webp');
+  }
+  &:nth-child(2){
+    background-image:
+      linear-gradient(to bottom, $overlayColour, $overlayColour),
+      url('assets/bannerImages/kidProof.jpeg');
+  }
+  &:nth-child(3){
+    background-image:
+      linear-gradient(to bottom, $overlayColour, $overlayColour),
+      url('assets/bannerImages/builtForTheClassroom.webp');
+  }
+}
+
+
+
+// ------------------------------------------------  buy section
+// style the buying section
+.sideRootBuySection{
+  // add padding to the whole section
+  padding: 1em;
+
+  // add gap to flex
+  gap: 1em;
+
+  // style the button
+  button{
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+  } 
+}
+
+
+
+
+// -------------- media queries
+/* screen 800 px and below */
+@media only screen and (max-width: 500px) {
+  /* make body relateive */
+  body{position: relative;}
+
+  /* make canvas full screen */
+  .canvasRoot{
+    width: 100%;
+  }
+
+  /* make side root an overlay */
+  /* also make side root overlay hold content root in center */
+  .sideRoot{
+    position: absolute;
+    top:0; left: 0;
+    width: 100%; max-width: 100%;
+     
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  /* make side root content root a max width 375 */
+  .sideRootContentRoot{
+    width: 100%;
+  }
+
+
+
+  /* make slide button appear on phones */
+  #slideButton{display: flex; pointer-events: auto;}
+
+
+
+  // sideRootSlider animation handling
+  $amountToSlideDown: 80vh;
+  #sideRootSlider{
+    position: relative;
+    transition: 0.3s;
+    top: 0;
+
+    // make sideroot fill phone screen
+    width: 100%;
+  }
+  // class to slide down
+  .sideRootDown{
+    top: $amountToSlideDown !important;
+  }
+  //style the slider button
+  .slideButtonRoot{
+    svg{
+      height: 2em;
+
+      //setup rotation
+      transform-origin: 50% 50%;
+      transition: 0.3s;
+    }
+    color: white;
+    gap: 0.5em;
+    padding:1em 0 0 0.5em;
+    background: linear-gradient(to bottom, #00000000, #00000088);
+     
+    // svg rotate
+    .svgRotate{transform: rotate(180deg)}
+  }
+}

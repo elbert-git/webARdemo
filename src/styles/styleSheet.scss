@@ -1,0 +1,13 @@
+// import default styles
+@use './defaultStyle.scss'; // make html use sensible defaults
+@use './sideBar.scss';
+
+
+/* fill screen */
+html,body {height: 100vh; width: 100vw; max-width: 100%;}
+html{overflow: clip;}
+/* temporary for dev */
+html{background-color: grey;} 
+
+
+
