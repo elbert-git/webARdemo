@@ -5,6 +5,7 @@ import { Label } from './label';
 import { Vector3 } from 'three';
 import { ModelLoader } from './modelLoader';
 // import microscopeModel from '/assets/experience/microscope/scene.gltf?url';
+console.log('yip');
 
 
 // allow singleton class
