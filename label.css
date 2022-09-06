@@ -12,6 +12,7 @@
   background-color: white;
   border-radius: 50%;
   font-weight: 700;
+  outline: solid black 1px;
   opacity: 1;
   transition: 0.3s;
 }
