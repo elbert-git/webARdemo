@@ -27,6 +27,9 @@ export class Experience{
     if(instance){return instance}
     instance = this;
 
+    const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
+    console.log(url);
+
     //get elemeents
     this.elCanvasRoot = document.querySelector('#canvasRoot')!;
 
@@ -37,8 +40,8 @@ export class Experience{
     this.orbitCamera.camera.position.set(0,0,1); // cam default position
     
     // import geometry
-    const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
-    console.log(url);
+    // const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
+    // console.log(url);
     this.modelLoader = new ModelLoader(url);
 
     // start render loop
