@@ -1,0 +1,47 @@
+.labelDivHolder{
+  width: 0; height: 0;
+}
+
+.labelRoot{
+  // handle position
+  position: absolute;
+
+  // make node white point
+  .labelNode{
+    width: 1em; height: 1em;
+    background-color: white;
+    border-radius: 50%;
+
+    //setup invis
+    opacity: 1; 
+    transition: 0.3s;
+  }
+
+  //handle hiding nodes
+  &.invisible{
+    .labelNode{
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .labelTextPanel{
+    position: absolute;
+    background-color: white;
+    border-radius: 1em;
+    padding: 1em;
+
+    // position to middle
+    transform: translate(1.5em, - 50%);
+
+    // setup animations
+    transition: 0.3s;
+    opacity: 0;
+  }
+
+  &:hover{
+    .labelTextPanel{
+      opacity: 1;
+    }
+  }
+}

@@ -122,6 +122,10 @@
   pointer-events: auto;
 }
 
+.noInput {
+  pointer-events: none;
+}
+
 .clickable {
   transform-origin: 50% 50%;
   transform: scale(1);
@@ -344,11 +348,45 @@
     box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
+.labelDivHolder {
+  width: 0;
+  height: 0;
+}
+
+.labelRoot {
+  position: absolute;
+}
+.labelRoot .labelNode {
+  width: 1em;
+  height: 1em;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+  transition: 0.3s;
+}
+.labelRoot.invisible .labelNode {
+  opacity: 0;
+  pointer-events: none;
+}
+.labelRoot .labelTextPanel {
+  position: absolute;
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  transform: translate(1.5em, -50%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.labelRoot:hover .labelTextPanel {
+  opacity: 1;
+}
+
 /* fill screen */
 html, body {
   height: 100vh;
   width: 100vw;
-  max-width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 html {
@@ -358,6 +396,14 @@ html {
 /* temporary for dev */
 html {
   background: linear-gradient(to right, #FDD160, #FAA643);
+}
+
+#canvasOverlay {
+  position: absolute;
+}
+
+#canvasRoot {
+  overflow: clip;
 }
 
 /*# sourceMappingURL=styleSheet.css.map */

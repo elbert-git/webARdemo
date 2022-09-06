@@ -122,6 +122,10 @@
   pointer-events: auto;
 }
 
+.noInput {
+  pointer-events: none;
+}
+
 .clickable {
   transform-origin: 50% 50%;
   transform: scale(1);

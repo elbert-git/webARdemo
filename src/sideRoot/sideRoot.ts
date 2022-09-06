@@ -1,3 +1,5 @@
+import { Experience } from "../three/experience";
+
 export class SideRoot{
   elSlider:HTMLElement;
   elSlideButton:HTMLElement;
@@ -5,6 +7,8 @@ export class SideRoot{
   elButtonText:HTMLElement;
   isDown:boolean;
   elBannerArrays:NodeListOf<Element>
+  experience:Experience;
+
   constructor(){
     //* --- props
     //elements 
@@ -13,6 +17,7 @@ export class SideRoot{
     this.elSVG = document.querySelector('#slideButton svg')!;
     this.elButtonText = document.querySelector('#slideButton div')!;
     this.elBannerArrays = document.querySelectorAll('.banners')!;
+    this.experience = new Experience();
     // state
     this.isDown = true;
 
@@ -45,6 +50,8 @@ export class SideRoot{
 
   bannerClicked(index:number):void{
     console.log('clicked banner ', index);
+
+    this.experience.orbitCamera.shiftPosition(index);
 
     //make banne slide down
     this.toggle();
