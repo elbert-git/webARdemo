@@ -38,6 +38,7 @@ export class Experience{
     
     // import geometry
     const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
+    console.log(url);
     this.modelLoader = new ModelLoader(url);
 
     // start render loop
@@ -59,7 +60,6 @@ export class Experience{
     this.labels.forEach(label => {
       label.update();
     });
-    console.log(this.orbitCamera.camera.position);
 
     // render
     this.renderCanvas.renderer.render(this.scene, this.orbitCamera.camera)
