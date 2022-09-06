@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="debugRedLine" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="styleSheet.css">
+
+    <script type="module" crossorigin src="/assets/index.8c404ff3.js"></script>
+  </head>
+  <body class="flex">
+    <div id="canvasRoot" class="canvasRoot">
+      <!-- loading overlay -->
+      <div id="loadingRoot" class="overlay fillHeight fillWidth flex flexAlignCenter flexJustifyCenter">
+        <div class="loader"></div>
+      </div>
+      <!-- dom overlay for ar -->
+      <div id="domOverlay"></div>
+      <!-- dom overlay for canvas -->
+      <div id="canvasOverlay" class="overlay fillHeight fillWidth"></div>
+    </div>
+    <div id="sideRoot fillHeight" class="sideRoot">
+      <div id="sideRootSlider" class="sideRootDown fillHeight flex flexColumn flexAlignCenter">
+        <!-- slide button -->
+        <div id="slideButton" class=" fillWidth slideButtonRoot clickable flex flexColumn flexAlignCenter">
+          <svg width="196" height="115" viewBox="0 0 196 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.24951 106.38L98.1526 17.4773L187.056 106.38" stroke="white" stroke-width="24"/>
+          </svg>
+          <div>Slide Up</div>
+        </div>
+        <!-- side bar content start -->
+        <div class="sideRootContentRoot flex flexColumn flexAlignCenter fillHeight">
+          <!-- title -->
+          <div class="blueBG sideBarTitleSection flex flexAlignCenter flexJustifyCenter flexColumn">
+            <div class="dropShadow">Introducing the</div>
+            <h1 class="dropShadow roboto">Micro-Junior</h1>
+            <svg width="184" height="15" viewBox="0 0 184 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.488281 12.5216C49.4441 5.03792 154.278 -5.43924 181.968 12.5216" stroke="white" stroke-width="3"/>
+            </svg>
+            <div class="dropShadow">The microscope designed for the Classroom</div>
+          </div>
+
+          <div class="horizontalLine"></div>
+          <!-- banners -->
+          <div class="flex flexColumn flexAlignCenter fillWidth">
+            <div style="font-size: 1em; margin-top: 1em;">Tap on a banner to learn more</div>
+            <div id="Banner1" class="banners roboto clickable">Simple to Use</div>
+            <div id="Banner2" class="banners roboto clickable">Kid-Proof</div>
+            <div id="Banner3" class="banners roboto clickable">Built for the Classroom</div>
+          </div>
+
+          <div class="horizontalLine"></div>
+          <!-- buy section -->
+          <div class="sideRootBuySection roboto flex flexColumn flexAlignCenter">
+            <h2 class="">Get the Micro-Junior</h2>
+            <div class="flex flexColumn flexAlignCenter">
+              <button class="roboto clickable">Buy Now</button>
+              <div>$50/unit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html>

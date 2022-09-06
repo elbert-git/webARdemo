@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* -------------  My css Stuff */
+/* debug */
+.debugRedLine {
+  outline: solid 3px rgba(255, 0, 0, 0.3);
+}
+
+/* removing default spacings */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* flex Classes */
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+/* justify */
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between;
+}
+
+.flexJustifyAround {
+  justify-content: space-around;
+}
+
+.flexJustifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* alignment */
+.flexAlignCenter {
+  align-items: center;
+}
+
+.flexAlignStart {
+  align-items: flex-start;
+}
+
+.flexAlignEnd {
+  align-items: flex-end;
+}
+
+.flexAlignStretch {
+  align-items: stretch;
+}
+
+.flexAlignBaseline {
+  align-items: baseline;
+}
+
+/* flex-grow */
+.flexGrow {
+  flex-grow: 1;
+}
+
+/* sizing divs */
+.fillWidth {
+  width: 100%;
+}
+
+.fillHeight {
+  height: 100%;
+}
+
+.hugHeight {
+  height: fit-content;
+}
+
+.hugWidth {
+  width: fit-content;
+}
+
+/* spacings */
+.padding {
+  padding: 1em;
+}
+
+.paddingHalf {
+  padding: 0.5em;
+}
+
+.margin {
+  margin: 1em;
+}
+
+/* visibility */
+.hide {
+  display: none;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* layering over */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.overlayInput {
+  pointer-events: auto;
+}
+
+.noInput {
+  pointer-events: none;
+}
+
+.clickable {
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.clickable:hover {
+  transform: scale(1.05);
+}
+.clickable:active {
+  transform: scale(0.95);
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto Slab", serif;
+}
+
+.horizontalLine {
+  min-height: 1px;
+  height: 1px;
+  width: 80%;
+  background-color: white;
+}
+
+.dropShadow {
+  filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* handle side bar placement in desktops */
+.sideRoot {
+  height: 100vh;
+  max-width: 300px;
+  width: 100%;
+  pointer-events: none;
+  filter: drop-shadow(-15px 0px 30px rgba(0, 0, 0, 0.4666666667));
+}
+
+/* make sidebar content root 100% and white */
+.sideRootContentRoot {
+  height: 100%;
+  background-color: #4E9FFF;
+  color: white;
+  pointer-events: auto;
+  overflow-y: scroll;
+}
+
+.canvasRoot {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* make slide button disappear on desktop */
+#slideButton {
+  display: none;
+}
+
+/* styling the sidebar titles */
+.sideBarTitleSection {
+  text-align: center;
+  padding: 1em;
+}
+
+.sideRootContentRoot svg {
+  margin-bottom: 0.5em;
+  max-width: 100%;
+}
+
+.banners {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none; /* Standard */
+  width: 80%;
+  box-sizing: border-box;
+  aspect-ratio: 10/4;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 0.5em 0;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.banners:nth-child(1) {
+  margin-top: 1em;
+}
+.banners:nth-child(4) {
+  margin-bottom: 1em;
+}
+.banners:nth-child(2) {
+  background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/simpleToUse.webp");
+}
+.banners:nth-child(3) {
+  background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/kidProof.jpeg");
+}
+.banners:nth-child(4) {
+  background-image: linear-gradient(to bottom, rgba(0, 81, 255, 0.4392156863), rgba(0, 81, 255, 0.4392156863)), url("assets/bannerImages/builtForTheClassroom.webp");
+}
+
+.sideRootBuySection {
+  padding: 1em;
+  gap: 1em;
+}
+.sideRootBuySection button {
+  font-weight: 700;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border: none;
+}
+
+/* screen 800 px and below */
+@media only screen and (max-width: 500px) {
+  /* make body relateive */
+  body {
+    position: relative;
+  }
+  /* make canvas full screen */
+  .canvasRoot {
+    width: 100%;
+  }
+  /* make side root an overlay */
+  /* also make side root overlay hold content root in center */
+  .sideRoot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* make side root content root a max width 375 */
+  .sideRootContentRoot {
+    width: 100%;
+  }
+  /* make slide button appear on phones */
+  #slideButton {
+    display: flex;
+    pointer-events: auto;
+  }
+  #sideRootSlider {
+    position: relative;
+    transition: 0.3s;
+    top: 0;
+    width: 100%;
+  }
+  .sideRootDown {
+    top: 60vh !important;
+  }
+  .slideButtonRoot {
+    color: white;
+    gap: 0.5em;
+    padding: 1em 0 1em 0em;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5333333333));
+  }
+  .slideButtonRoot svg {
+    height: 2em;
+    transform-origin: 50% 50%;
+    transition: 0.3s;
+  }
+  .slideButtonRoot .svgRotate {
+    transform: rotate(180deg);
+  }
+}
+#loadingRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 1s;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%, 100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+.labelDivHolder {
+  width: 0;
+  height: 0;
+}
+
+.labelRoot {
+  position: absolute;
+}
+.labelRoot .labelNode {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  opacity: 1;
+  transition: 0.3s;
+}
+.labelRoot.invisible .labelNode {
+  opacity: 0;
+  pointer-events: none;
+}
+.labelRoot .labelTextPanel {
+  position: absolute;
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  width: 150px;
+  transform: translate(1.5em, -50%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.labelRoot .labelTextPanel h3 {
+  margin-bottom: 0.5em;
+}
+.labelRoot:hover .labelTextPanel {
+  opacity: 1;
+}
+
+/* fill screen */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+html {
+  overflow: clip;
+}
+
+/* temporary for dev */
+html {
+  background: linear-gradient(to right, #FDD160, #f7983f);
+}
+
+#canvasOverlay {
+  position: absolute;
+}
+
+#canvasRoot {
+  overflow: clip;
+}
+
+/*# sourceMappingURL=styleSheet.css.map */

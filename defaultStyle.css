@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* -------------  My css Stuff */
+/* debug */
+.debugRedLine {
+  outline: solid 3px rgba(255, 0, 0, 0.3);
+}
+
+/* removing default spacings */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* flex Classes */
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+/* justify */
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between;
+}
+
+.flexJustifyAround {
+  justify-content: space-around;
+}
+
+.flexJustifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* alignment */
+.flexAlignCenter {
+  align-items: center;
+}
+
+.flexAlignStart {
+  align-items: flex-start;
+}
+
+.flexAlignEnd {
+  align-items: flex-end;
+}
+
+.flexAlignStretch {
+  align-items: stretch;
+}
+
+.flexAlignBaseline {
+  align-items: baseline;
+}
+
+/* flex-grow */
+.flexGrow {
+  flex-grow: 1;
+}
+
+/* sizing divs */
+.fillWidth {
+  width: 100%;
+}
+
+.fillHeight {
+  height: 100%;
+}
+
+.hugHeight {
+  height: fit-content;
+}
+
+.hugWidth {
+  width: fit-content;
+}
+
+/* spacings */
+.padding {
+  padding: 1em;
+}
+
+.paddingHalf {
+  padding: 0.5em;
+}
+
+.margin {
+  margin: 1em;
+}
+
+/* visibility */
+.hide {
+  display: none;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* layering over */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.overlayInput {
+  pointer-events: auto;
+}
+
+.noInput {
+  pointer-events: none;
+}
+
+.clickable {
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: 0.3s;
+}
+.clickable:hover {
+  transform: scale(1.05);
+}
+.clickable:active {
+  transform: scale(0.95);
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto Slab", serif;
+}
+
+.horizontalLine {
+  min-height: 1px;
+  height: 1px;
+  width: 80%;
+  background-color: white;
+}
+
+.dropShadow {
+  filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.3));
+}
+
+/*# sourceMappingURL=defaultStyle.css.map */
