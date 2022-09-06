@@ -15,7 +15,8 @@ export class ModelLoader{
         console.log('successfully loaded model')
         this.experience.scene.add(gltf.scene)
         this.model = gltf.scene;
-        // todo tell experience microscope is loaded;
+        // tell experience microscope is loaded;
+        this.experience.removeLoader();
       }
     )
   }

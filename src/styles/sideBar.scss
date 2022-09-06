@@ -1,6 +1,10 @@
 // variables
 $blue: #4E9FFF;
 
+
+
+
+
 // ------------------------------------------------  title section
 /* handle side bar placement in desktops */
 .sideRoot{
@@ -9,6 +13,9 @@ $blue: #4E9FFF;
   width: 100%;
 
   pointer-events: none;
+   
+  //drop shadow for desktop
+  filter: drop-shadow(-15px 0px 30px #00000077);  
 }
 /* make sidebar content root 100% and white */
 .sideRootContentRoot{
@@ -160,7 +167,7 @@ $blue: #4E9FFF;
 
 
   // sideRootSlider animation handling
-  $amountToSlideDown: 80vh;
+  $amountToSlideDown: 60vh;
   #sideRootSlider{
     position: relative;
     transition: 0.3s;

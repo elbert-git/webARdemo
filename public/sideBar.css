@@ -4,6 +4,7 @@
   max-width: 300px;
   width: 100%;
   pointer-events: none;
+  filter: drop-shadow(-15px 0px 30px rgba(0, 0, 0, 0.4666666667));
 }
 
 /* make sidebar content root 100% and white */
@@ -119,7 +120,7 @@
     width: 100%;
   }
   .sideRootDown {
-    top: 80vh !important;
+    top: 60vh !important;
   }
   .slideButtonRoot {
     color: white;

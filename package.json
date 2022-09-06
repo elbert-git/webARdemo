@@ -16,6 +16,7 @@
   "dependencies": {
     "gsap": "^3.11.1",
     "sass": "^1.54.8",
-    "three": "^0.144.0"
+    "three": "^0.144.0",
+    "three-addons": "^1.2.0"
   }
 }

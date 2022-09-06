@@ -40,28 +40,14 @@ export class Experience{
     const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
     this.modelLoader = new ModelLoader(url);
 
-    // create lighting
-    this.keylight = new THREE.DirectionalLight(0xFFFFFF, 3);
-    this.scene.add(this.keylight);
-    const helper = new THREE.DirectionalLightHelper(this.keylight, 1);
-    this.scene.add(helper);
-
-    //test light reticle
-    const geoTest = new THREE.Mesh(
-      new THREE.BoxGeometry(0.01, 0.01, 0.01),
-      new THREE.MeshBasicMaterial({color: 0x000000})
-    )
-    this.scene.add(geoTest);
-    this.keylight.target = geoTest;
-
     // start render loop
     this.renderCanvas.renderer.setAnimationLoop(()=>{this.update()});
 
     // create label
     this.labels = [
-      new Label(new Vector3(0, 0, 0), "Title 1", "Text body body body"),
-      new Label(new Vector3(-0.3, 0.1 ,0.1), "Title 2", "Text body body body"),
-      new Label(new Vector3(0.1, -0.3, 0.1), "Title 3", "Text body body body"),
+      new Label(new Vector3(-0.1, 0.63, 0.02), "Simple To Use", "No complicated dials or settings. Simply look through it and focus"),
+      new Label(new Vector3(0.05, 0.5, -0.1), "Kid-Proof", "Built with strong and durable materials for very hands-on learning"),
+      new Label(new Vector3(0.0, 0.35, 0.2), "For the classroom", "Designed for schools, with interchangeable components and available for bulk orders"),
     ]
   }
 
@@ -73,8 +59,13 @@ export class Experience{
     this.labels.forEach(label => {
       label.update();
     });
+    console.log(this.orbitCamera.camera.position);
 
     // render
     this.renderCanvas.renderer.render(this.scene, this.orbitCamera.camera)
+  }
+
+  removeLoader(){
+    document.querySelector('#loadingRoot')?.classList.add('hide');
   }
 }

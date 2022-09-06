@@ -51,9 +51,12 @@ export class SideRoot{
   bannerClicked(index:number):void{
     console.log('clicked banner ', index);
 
-    this.experience.orbitCamera.shiftPosition(index);
+    this.experience.orbitCamera.shiftPosition(index, this.experience.labels[index].position);
 
     //make banne slide down
-    this.toggle();
+
+    if(!this.isDown){
+      this.toggle();
+    }
   }
 }

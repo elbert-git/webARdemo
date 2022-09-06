@@ -33,7 +33,7 @@ export class Label{
 
 
     this.htmlElement.addEventListener('pointerup', ()=>{
-      this.experience.orbitCamera.shiftPosition(this.id);
+      this.experience.orbitCamera.shiftPosition(this.id, this.experience.labels[this.id].position);
     })
 
   }
@@ -87,10 +87,10 @@ export class Label{
   createHTMLTemplate(title:string, body:string):string{
     return `
     <div id="label${this.id.toString()}" class="labelRoot overlayInput  ">
-      <div class="labelNode "/>
+      <div class="labelNode display flex flexAlignCenter flexJustifyCenter roboto">i</div>
       <div class="labelTextPanel noInput ">
-        <h3 class="">${title}</h3>
-        <p class="">${body}</p>
+        <h3 class="lato">${title}</h3>
+        <p class="lato">${body}</p>
       </div>
     </div>
     `

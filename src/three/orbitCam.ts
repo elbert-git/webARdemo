@@ -4,9 +4,10 @@ import { PerspectiveCamera, Vector3 } from "three";
 import gsap from "gsap";
 
 const savedPositions:Array<Vector3> = [
-  new Vector3(2,2,2),
-  new Vector3(-1,1,1),
-  new Vector3(2,-2,2)
+  new Vector3(-0.3, 0.9, -0.2),
+  new Vector3(0.35,0.55,-0.27),
+  new Vector3(0,0.4,0.4),
+  new Vector3(0.7,0.5,0.7) // this is the start position
 ]
 
 export class OrbitCamera{
@@ -23,16 +24,24 @@ export class OrbitCamera{
       1000
     );
     this.orbitControls = new OrbitControls(this.camera, this.experience.renderCanvas.renderer.domElement);
+
+    // opening animartions
+    this.camera.position.set(0,0,-5);
+    // set initiaal posiiton
+    this.shiftPosition(3, new Vector3(0,0.35,0.1));
+    
   }
 
-  shiftPosition(index:number){
+  shiftPosition(index:number, target:Vector3){
+    if(!this.orbitControls.enabled){return}
+
     const pos = savedPositions[index];
     //disable controlls
     this.orbitControls.enabled = false;
     // fix targets
     gsap.to(this.orbitControls.target,{
       duration: 1,
-      x: 0, y: 0, z: 0
+      x: target.x, y: target.y, z: target.z
     });
     //start animation and re-enabled controls onfinished
     gsap.to(this.camera.position, {

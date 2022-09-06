@@ -163,6 +163,7 @@
   max-width: 300px;
   width: 100%;
   pointer-events: none;
+  filter: drop-shadow(-15px 0px 30px rgba(0, 0, 0, 0.4666666667));
 }
 
 /* make sidebar content root 100% and white */
@@ -278,7 +279,7 @@
     width: 100%;
   }
   .sideRootDown {
-    top: 80vh !important;
+    top: 60vh !important;
   }
   .slideButtonRoot {
     color: white;
@@ -357,10 +358,12 @@
   position: absolute;
 }
 .labelRoot .labelNode {
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   background-color: white;
   border-radius: 50%;
+  font-weight: 700;
+  outline: solid black 1px;
   opacity: 1;
   transition: 0.3s;
 }
@@ -373,9 +376,13 @@
   background-color: white;
   border-radius: 1em;
   padding: 1em;
+  width: 150px;
   transform: translate(1.5em, -50%);
   transition: 0.3s;
   opacity: 0;
+}
+.labelRoot .labelTextPanel h3 {
+  margin-bottom: 0.5em;
 }
 .labelRoot:hover .labelTextPanel {
   opacity: 1;
@@ -395,7 +402,7 @@ html {
 
 /* temporary for dev */
 html {
-  background: linear-gradient(to right, #FDD160, #FAA643);
+  background: linear-gradient(to right, #FDD160, #f7983f);
 }
 
 #canvasOverlay {
