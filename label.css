@@ -5,6 +5,8 @@
 
 .labelRoot {
   position: absolute;
+  user-select: none;
+  cursor: pointer;
 }
 .labelRoot .labelNode {
   width: 1.5em;
@@ -26,7 +28,7 @@
   border-radius: 1em;
   padding: 1em;
   width: 150px;
-  transform: translate(1.5em, -50%);
+  transform: translate(-50%, -120%);
   transition: 0.3s;
   opacity: 0;
 }
