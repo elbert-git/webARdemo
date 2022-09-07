@@ -17,8 +17,19 @@
     }
 }
 
+// spawn ar button
 #spawnARButton{
   margin-bottom: 1em;
+}
+
+// styling the insructions
+.arInstructions{
+  background-color: rgba(0, 0, 0, 0.678);
+  img{width: 10em;}
+  padding: 1em;
+  border-radius: 1.5em;
+  color: white;
+  div{width: 8em; text-align: center;}
 }
 
 
