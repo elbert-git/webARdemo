@@ -19,6 +19,20 @@
   margin-bottom: 1em;
 }
 
+.arInstructions {
+  background-color: rgba(0, 0, 0, 0.678);
+  padding: 1em;
+  border-radius: 1.5em;
+  color: white;
+}
+.arInstructions img {
+  width: 10em;
+}
+.arInstructions div {
+  width: 8em;
+  text-align: center;
+}
+
 .arButtonsRoot {
   display: flex;
   align-items: flex-end;
