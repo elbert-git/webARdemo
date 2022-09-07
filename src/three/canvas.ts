@@ -16,7 +16,7 @@ export class RenderCanvas{
     // properties
     this.elCanvasRoot = document.querySelector('#canvasRoot')!;
     this.size = {x: this.elCanvasRoot.clientWidth, y: this.elCanvasRoot.clientHeight};
-    this.renderer = new WebGLRenderer({alpha:true});
+    this.renderer = new WebGLRenderer({alpha:true, antialias: true});
     this.experience = new Experience();
 
     //setup tonemapping

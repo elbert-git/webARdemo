@@ -6,6 +6,10 @@
   // handle position
   position: absolute;
 
+  // cursor stuff
+  user-select: none;
+  cursor: pointer;
+
   // make node white point
   .labelNode{
     width: 1.5em; height: 1.5em;
@@ -39,7 +43,7 @@
     width: 150px;
 
     // position to middle
-    transform: translate(1.5em, - 50%);
+    transform: translate(-50%, -120%);
 
     // setup animations
     transition: 0.3s;

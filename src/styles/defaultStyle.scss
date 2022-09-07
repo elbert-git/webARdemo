@@ -40,7 +40,7 @@
 .margin                    {margin: 1em;}
 
 /* visibility */
-.hide                      {display: none;}
+.hide                      {display: none !important;}
 .fadeOut                   {opacity: 0;}
 
 /* layering over */
@@ -56,6 +56,8 @@
   transition: 0.3s;
   &:hover{transform: scale(1 + $changeScale);}
   &:active{transform: scale(1 - $changeScale);}
+  user-select: none;
+  cursor: pointer;
 }
 
 

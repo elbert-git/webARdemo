@@ -11,21 +11,46 @@
 
   </head>
   <body class="flex">
+    <!-- canvas start -->
     <div id="canvasRoot" class="canvasRoot">
       <!-- loading overlay -->
       <div id="loadingRoot" class="overlay fillHeight fillWidth flex flexAlignCenter flexJustifyCenter">
         <div class="loader"></div>
       </div>
       <!-- dom overlay for ar -->
-      <div id="domOverlay"></div>
+      <div id="domOverlay" class="flex flexColumn flexAlignCenter">
+        <div id="domOverlayRoot" class="hide domOverlayRoot fillHeight fillWidth">
+          <div class="fillWidth fillHeight flex flexAlignStart flexJustifyCenter">
+            <div id="backARButton" class="arButtonVisuals lato clickable">Back</div>
+          </div>
+          <div class="overlay fillWidth fillHeight flex flexAlignEnd flexJustifyCenter">
+            <div id="spawnARButton" class="arButtonVisuals lato clickable overlayInput">Place microscope</div>
+          </div>
+          <div class="overlay fillWidth fillHeight flex flexAlignCenter flexJustifyCenter">
+            <div id="arInstructions" class="arButtonVisuals lato clickable overlayInput">instructions</div>
+          </div>
+          <div class="overlay fillWidth fillHeight flex flexAlignEnd flexJustifyCenter">
+            <div id="replaceARButton" class="arButtonVisuals lato clickable overlayInput">Replace microscope</div>
+          </div>
+        </div>
+      </div>
       <!-- dom overlay for canvas -->
-      <div id="canvasOverlay" class="overlay fillHeight fillWidth">
-        <div id="ARNotAvailable" class="arButton" >AR not available</div>
-        <div id="ARApple" class="arButton">Tap for AR</div>
-        <div id="ARAndroid" class="arButton">Tap for AR</div>
-        <div id="AR-QRcode" class="arButton">Scan for AR</div>
+      <div id="canvasOverlay" class="overlay fillHeight fillWidth hide">
+      </div>
+      <!-- for ar buttons -->
+      <div class="arButtonsRoot overlay fillHeight fillWidth hide">
+        <a id="ARApple" class="hide arButton lato clickable overlayInput" href="assets/qrCode.png">Tap for AR</a>
+        <div id="ARWebXr" class="hide arButton lato overlayInput">Tap for AR</div>
+        <div id="AR-QRCode" class="arButton lato clickable overlayInput hide" onclick="alert('URL copied to clipboard')">
+          <h3>Scan for AR</h3>
+          <div>AR not available on this device</div>
+          <div class="qrPanelRoot">
+            <img src="assets/qrCode.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
+    <!-- side root start -->
     <div id="sideRoot fillHeight" class="sideRoot">
       <div id="sideRootSlider" class="sideRootDown fillHeight flex flexColumn flexAlignCenter">
         <!-- slide button -->

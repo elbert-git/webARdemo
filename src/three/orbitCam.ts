@@ -40,7 +40,7 @@ export class OrbitCamera{
     this.orbitControls.enabled = false;
     // fix targets
     gsap.to(this.orbitControls.target,{
-      duration: 1,
+      duration: 0.5,
       x: target.x, y: target.y, z: target.z
     });
     //start animation and re-enabled controls onfinished

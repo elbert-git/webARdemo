@@ -17,6 +17,12 @@ export class ModelLoader{
         this.model = gltf.scene;
         // tell experience microscope is loaded;
         this.experience.removeLoader();
+        
+        // show canvas UI overlays
+        // show ar button
+        document.querySelector('.arButtonsRoot')?.classList.toggle('hide');
+        // show ar button
+        document.querySelector('#canvasOverlay')?.classList.toggle('hide');
       }
     )
   }

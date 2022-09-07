@@ -2,9 +2,10 @@ import * as THREE from 'three';
 import { RenderCanvas } from './canvas';
 import { OrbitCamera } from './orbitCam';
 import { Label } from './label';
-import { Vector3 } from 'three';
+import { Group, Mesh, Vector3 } from 'three';
 import { ModelLoader } from './modelLoader';
-// import microscopeModel from '/assets/experience/microscope/microscope.glb';
+import { ARButton } from './arButton';
+
 
 
 // allow singleton class
@@ -20,6 +21,8 @@ export class Experience{
   modelLoader!:ModelLoader;
   keylight!:THREE.DirectionalLight;
   hemisphere!:THREE.HemisphereLight;
+  arButton!:ARButton;
+  reticle!:Group;
 
 
   constructor(){
@@ -27,8 +30,8 @@ export class Experience{
     if(instance){return instance}
     instance = this;
 
+    // import mircorscope url
     const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
-    console.log(url);
 
     //get elemeents
     this.elCanvasRoot = document.querySelector('#canvasRoot')!;
@@ -39,23 +42,42 @@ export class Experience{
     this.orbitCamera = new OrbitCamera();
     this.orbitCamera.camera.position.set(0,0,1); // cam default position
     
-    // import geometry
-    // const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
-    // console.log(url);
+    // import microscope geometry
     this.modelLoader = new ModelLoader(url);
 
-    // start render loop
-    this.renderCanvas.renderer.setAnimationLoop(()=>{this.update()});
+    // create reticle
+    // this.reticle = new THREE.Mesh(
+    //   new THREE.SphereGeometry(0.05, 10, 10),
+    //   new THREE.MeshBasicMaterial({color: 0xffffff})
+    // )
+    this.reticle = new THREE.Group();
+    const reticleMesh = new THREE.Mesh(
+      new THREE.RingGeometry(0.05, 0.06, 32),
+      new THREE.MeshBasicMaterial({color: 0xffffff})
+    )
+    reticleMesh.rotateOnAxis(new THREE.Vector3(1,0,0), -1.5708 )
+    this.reticle.add(reticleMesh);
+    this.reticle.visible = false;
+    this.reticle.matrixAutoUpdate = false;
+    this.scene.add(this.reticle);
+
+
 
     // create label
     this.labels = [
-      new Label(new Vector3(-0.1, 0.63, 0.02), "Simple To Use", "No complicated dials or settings. Simply look through it and focus"),
-      new Label(new Vector3(0.05, 0.5, -0.1), "Kid-Proof", "Built with strong and durable materials for very hands-on learning"),
-      new Label(new Vector3(0.0, 0.35, 0.2), "For the classroom", "Designed for schools, with interchangeable components and available for bulk orders"),
+      new Label(new Vector3(-0.08, 0.63, 0.02), "Simple To Use", "No complicated dials or settings. Simply look through it and focus"),
+      new Label(new Vector3(0.05, 0.48, -0.1), "Kid-Proof", "Built with strong and durable materials for very hands-on learning"),
+      new Label(new Vector3(0.0, 0.33, 0.2), "For the classroom", "Designed for schools, with interchangeable components and available for bulk orders"),
     ]
+
+    // start ar button
+    this.arButton = new ARButton();
+
+    // start render loop
+    this.renderCanvas.renderer.setAnimationLoop((timeStamp, frame)=>{this.update(timeStamp, frame)});
   }
 
-  update(){
+  update(timeStamp:any, frame:any){
     //cam updates
     this.orbitCamera.orbitControls.update();
 
@@ -63,6 +85,10 @@ export class Experience{
     this.labels.forEach(label => {
       label.update();
     });
+
+
+    // AR loop
+    this.arButton.update(timeStamp, frame);
 
     // render
     this.renderCanvas.renderer.render(this.scene, this.orbitCamera.camera)

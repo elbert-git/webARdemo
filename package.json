@@ -10,13 +10,16 @@
   },
   "devDependencies": {
     "@types/three": "^0.144.0",
+    "@types/webxr": "^0.5.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
   },
   "dependencies": {
+    "@types/ua-parser-js": "^0.7.36",
     "gsap": "^3.11.1",
     "sass": "^1.54.8",
     "three": "^0.144.0",
-    "three-addons": "^1.2.0"
+    "three-addons": "^1.2.0",
+    "ua-parser-js": "^1.0.2"
   }
 }
