@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { RenderCanvas } from './canvas';
 import { OrbitCamera } from './orbitCam';
 import { Label } from './label';
-import { Group, Mesh, Vector3 } from 'three';
+import { Group, Vector3 } from 'three';
 import { ModelLoader } from './modelLoader';
 import { ARButton } from './arButton';
 

@@ -103,7 +103,7 @@
 
 /* visibility */
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .fadeOut {
@@ -130,6 +130,8 @@
   transform-origin: 50% 50%;
   transform: scale(1);
   transition: 0.3s;
+  user-select: none;
+  cursor: pointer;
 }
 .clickable:hover {
   transform: scale(1.05);
@@ -356,6 +358,8 @@
 
 .labelRoot {
   position: absolute;
+  user-select: none;
+  cursor: pointer;
 }
 .labelRoot .labelNode {
   width: 1.5em;
@@ -377,7 +381,7 @@
   border-radius: 1em;
   padding: 1em;
   width: 150px;
-  transform: translate(1.5em, -50%);
+  transform: translate(-50%, -120%);
   transition: 0.3s;
   opacity: 0;
 }
@@ -385,6 +389,73 @@
   margin-bottom: 0.5em;
 }
 .labelRoot:hover .labelTextPanel {
+  opacity: 1;
+}
+
+.arButtonVisuals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4E9FFF;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  font-size: 0.8em;
+  width: fit-content;
+}
+.arButtonVisuals div {
+  font-size: 0.8em;
+}
+
+#spawnARButton {
+  margin-bottom: 1em;
+}
+
+.arButtonsRoot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  user-select: none;
+}
+.arButtonsRoot .arButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4E9FFF;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  font-size: 0.8em;
+  width: fit-content;
+}
+.arButtonsRoot .arButton div {
+  font-size: 0.8em;
+}
+@media only screen and (max-width: 500px) {
+  .arButtonsRoot {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.arButtonsRoot .qrPanelRoot {
+  position: absolute;
+  transform: translateY(-75%);
+  padding: 1em;
+  width: 13em;
+  transition: 0.3s;
+  opacity: 0;
+}
+.arButtonsRoot .qrPanelRoot img {
+  max-width: 100%;
+}
+.arButtonsRoot #AR-QRCode:hover {
+  cursor: pointer;
+}
+.arButtonsRoot #AR-QRCode:hover .qrPanelRoot {
   opacity: 1;
 }
 

@@ -103,7 +103,7 @@
 
 /* visibility */
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .fadeOut {
@@ -130,6 +130,8 @@
   transform-origin: 50% 50%;
   transform: scale(1);
   transition: 0.3s;
+  user-select: none;
+  cursor: pointer;
 }
 .clickable:hover {
   transform: scale(1.05);
