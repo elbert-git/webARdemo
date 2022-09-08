@@ -1,0 +1,11 @@
+Model Information:
+* title:	A Basic Microscope
+* source:	https://sketchfab.com/3d-models/a-basic-microscope-06b88b2ae7784b4297107acff332bc0b
+* author:	Helindu (https://sketchfab.com/Helindu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "A Basic Microscope" (https://sketchfab.com/3d-models/a-basic-microscope-06b88b2ae7784b4297107acff332bc0b) by Helindu (https://sketchfab.com/Helindu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

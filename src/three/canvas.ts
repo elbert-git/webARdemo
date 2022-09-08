@@ -20,9 +20,8 @@ export class RenderCanvas{
     this.experience = new Experience();
 
     //setup tonemapping
-    // this.renderer.toneMapping = ACESFilmicToneMapping;
     this.renderer.toneMapping = ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 10;
+    this.renderer.toneMappingExposure = 1;
     // output encdoding 
     this.renderer.outputEncoding = sRGBEncoding;
 

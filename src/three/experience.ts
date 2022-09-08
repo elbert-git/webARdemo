@@ -30,9 +30,6 @@ export class Experience{
     if(instance){return instance}
     instance = this;
 
-    // import mircorscope url
-    const url = new URL('/assets/experience/microscope/microscope.glb', import.meta.url).href
-
     //get elemeents
     this.elCanvasRoot = document.querySelector('#canvasRoot')!;
 
@@ -43,13 +40,9 @@ export class Experience{
     this.orbitCamera.camera.position.set(0,0,1); // cam default position
     
     // import microscope geometry
-    this.modelLoader = new ModelLoader(url);
+    this.modelLoader = new ModelLoader();
 
-    // create reticle
-    // this.reticle = new THREE.Mesh(
-    //   new THREE.SphereGeometry(0.05, 10, 10),
-    //   new THREE.MeshBasicMaterial({color: 0xffffff})
-    // )
+    // creat and handle reticle
     this.reticle = new THREE.Group();
     const reticleMesh = new THREE.Mesh(
       new THREE.RingGeometry(0.05, 0.06, 32),
@@ -60,8 +53,6 @@ export class Experience{
     this.reticle.visible = false;
     this.reticle.matrixAutoUpdate = false;
     this.scene.add(this.reticle);
-
-
 
     // create label
     this.labels = [
