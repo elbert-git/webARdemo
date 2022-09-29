@@ -50,6 +50,7 @@
   padding: 1em;
   margin: 1em;
   font-size: 0.8em;
+  text-decoration: none;
   width: fit-content;
 }
 .arButtonsRoot .arButton div {
