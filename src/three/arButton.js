@@ -40,7 +40,7 @@ export class ARButton{
   async init(){
     // --- flowchart
     // if ios
-    if(this.uaParser.getOS().name === "IOS"){ // is ios
+    if(this.uaParser.getOS().name === "iOS"){ // is ios
       console.log('show ios usdz');
       this.showIOS();
     }else if(await this.isWebXRAble()){ // is android web xr able

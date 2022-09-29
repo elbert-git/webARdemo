@@ -9,3 +9,5 @@ const sideRoot = new SideRoot()
 
 // this is to tell the ts compiler to shut up
 if(false) {console.log(experience, sideRoot);}
+
+// if mac please turn off the drop shadow flicker
